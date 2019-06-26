@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons positon start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+     Shopping
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+      <ion-list>
+        <button (click)="showDetails(articles)" ion-item *ngFor="let articles of finaldata">
+            <ion-thumbnail item-start>
+                <img src="{{'http://192.168.1.92:8000'+articles.pictures}}" #pictures (click)="showImage(pictures,$event)">
+              </ion-thumbnail>
+           <h3>{{articles.title}}</h3>
+           <p>{{articles.description}}</p>
+           <p>{{articles.price | currency }}</p>
+           <p>
+             <span *ngIf="articles.averageStar >= 1">
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+             </span>
+           <span *ngIf="articles.averageStar >= 2">
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+           </span>
+           <span *ngIf="articles.averageStar >= 3">
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+           </span>
+         <span>
+          <ion-icon class="iconYellow" name="star"></ion-icon>
+       </span>
+      </p>
+        </button>
+      </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-row style="background:#fff">
+    <ion-col offset-1 col-10>
+        <button ion-button round large>
+          <ion-icon name="camera">&nbsp;</ion-icon>
+          Vendez vos biens
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

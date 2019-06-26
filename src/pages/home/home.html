@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Appli shopping
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <ion-list>
+        <button ion-item *ngFor="let articles of article">
+            <ion-thumbnail slot="start">
+                <ion-img  [src]="articles.pictures[0]"></ion-img>
+              </ion-thumbnail>
+           <ion-label>{{articles.title}}</ion-label>
+           <ion-label>{{articles.price | currency }}</ion-label>
+           <span>
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+           </span>
+           <span>
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+           </span>
+           <span>
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+           </span>
+           <span>
+              <ion-icon class="iconYellow" name="star"></ion-icon>
+           </span>
+        </button>
+      </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-row style="background:#fff">
+    <ion-col col-10>
+        <button ion-button round large>
+          <ion-icon name="camera"></ion-icon>
+          Vendez vos biens
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
